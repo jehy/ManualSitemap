@@ -13,7 +13,7 @@ else
 * Redirect pages are ignored.
 
 */
-class ManualSitemapPage extends SpecialPage {
+class SpecialManualSitemap extends SpecialPage {
 
         var $file_name = "sitemap.xml"; // relative to $wgSitename (must be writable)
 
@@ -67,19 +67,23 @@ class ManualSitemapPage extends SpecialPage {
 
     }
 
+	public function __construct() {
+		parent::__construct( 'ManualSitemap', 'manualsitemap', true );
+	}
     function execute() {
         global $wgUser, $wgOut;
 
-		if ( ! $wgUser->isAllowed("DeleteOldRevisions") ) {
-			$wgOut->permissionRequired( 'DeleteOldRevisions' );
+		if ( ! $wgUser->isAllowed("manualsitemap") ) {
+			$wgOut->permissionRequired( 'manualsitemap' );
 			return;
 		}
 
-        $this->setHeaders();
+        $this->setHeaders();/*
 
         global $wgRequest;
         $form = new DeleteOldRevisionsForm($wgRequest);
-        $form->execute();
+        $form->execute();*/
+        $this->initialize();
     }
 
         function utf8_write( $handle, $data ) {
@@ -87,8 +91,12 @@ class ManualSitemapPage extends SpecialPage {
         }
 
         function getName() {
-                return "ManualSitemap";
+                return 'ManualSitemap';
         }
+        
+	public function getDescription() {
+		return ( 'Special ' . ( $this->getName() ) );
+	}
 
         function isExpensive() {
                 return false;
@@ -355,11 +363,11 @@ class ManualSitemapPage extends SpecialPage {
  */
 /**
 * Entry point.
-*/
+*//*
 function wfSpecialManualSitemap()
 {
   $gsitemap = new ManualSitemapPage();
   $gsitemap->initialize();
-}
+}*/
 
 ?>
