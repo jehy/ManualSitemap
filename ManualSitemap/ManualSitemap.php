@@ -2,9 +2,9 @@
 
 #
 # Special:ManualSitemap MediaWiki extension
-# Version 1.1
+# Version 1.2
 #
-# Copyright  2006 Fran&ccedil;ois Boutines-Vignard, 2008-2009 Jehy.
+# Copyright  2006 Fran&ccedil;ois Boutines-Vignard, 2008-2012 Jehy.
 #
 # A special page to generate Google Sitemap XML files.
 # see http://www.google.com/schemas/sitemap/0.84/sitemap.xsd for details.
@@ -36,6 +36,7 @@
 # 0.2: Thomas added functions for excluding pages, warning if notify fails and setting of servers base url (2009/04/08)
 # 1.0: Script rewritten, allowing easier usage (2009/11/30)
 # 1.1: Added discussion pages exclusion option
+# 1.2: Fixed compatibility issues for MW 1.19.2
 
 $wgExtensionFunctions[] = 'wfExtensionSpecialManualSitemap';
 $wgExtensionCredits['specialpage'][] = array (
@@ -44,7 +45,7 @@ $wgExtensionCredits['specialpage'][] = array (
 	'description' => 'Adds a [[Special:ManualSitemap|special page]] to create a XML Google Sitemap file, along with some reporting.',
 	'url' => 'http://jehy.ru/wiki-extensions.en.html',
 	'author' => 'Fran&#231;ois Boutines-Vignard, Jehy http://jehy.ru/index.en.html, [http://www.thomas-schweitzer.de Thomas]',
-	'version' => '1.0'
+	'version' => '1.2'
 );
 
 function wfExtensionSpecialManualSitemap() {
