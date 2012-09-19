@@ -5,7 +5,7 @@ else
 	require_once("QueryPage.php");
 
 /**
-* 'ManualSitemapPage' class
+* 'SpecialManualSitemap' class
 *
 * The XML file is ordered by decreasing popularity order (ie. maximum number of hits).
 * User should have the 'bureaucrat' rights.
@@ -77,12 +77,7 @@ class SpecialManualSitemap extends SpecialPage {
 			$wgOut->permissionRequired( 'manualsitemap' );
 			return;
 		}
-
-        $this->setHeaders();/*
-
-        global $wgRequest;
-        $form = new DeleteOldRevisionsForm($wgRequest);
-        $form->execute();*/
+        $this->setHeaders();
         $this->initialize();
     }
 
@@ -358,16 +353,5 @@ class SpecialManualSitemap extends SpecialPage {
         }
 }
 
-/**
- * Entry point.
- */
-/**
-* Entry point.
-*//*
-function wfSpecialManualSitemap()
-{
-  $gsitemap = new ManualSitemapPage();
-  $gsitemap->initialize();
-}*/
 
 ?>

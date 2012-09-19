@@ -38,7 +38,7 @@
 # 1.1: Added discussion pages exclusion option
 # 1.2: Fixed compatibility issues for MW 1.19.2
 
-#$wgExtensionFunctions[] = 'wfExtensionSpecialManualSitemap';
+
 $wgExtensionCredits['specialpage'][] = array (
 	'path'=>__FILE__,
 	'name' => 'Special:ManualSitemap',
@@ -47,15 +47,6 @@ $wgExtensionCredits['specialpage'][] = array (
 	'author' => 'Fran&#231;ois Boutines-Vignard, Jehy http://jehy.ru/index.en.html, [http://www.thomas-schweitzer.de Thomas]',
 	'version' => '1.2'
 );
-/*
-function wfExtensionSpecialManualSitemap() {
-	global $wgMessageCache,$IP,$wgGroupPermissions;
-	#$wgMessageCache->addMessages(array('manualsitemap' => 'Manual Sitemap'));
-	$wgAvailableRights[] = 'manualsitemap';
-	$wgGroupPermissions['bureaucrat']['manualsitemap'] = true;
-	SpecialPage::addPage( new SpecialPage( 'ManualSitemap' , 'userrights',true,false,$IP.'/extensions/ManualSitemap/SpecialManualSitemap.php') );
-	
-}*/
 $wgSpecialPages['ManualSitemap'] = 'SpecialManualSitemap';
 $wgAutoloadClasses['SpecialManualSitemap'] 		= dirname( __FILE__ ) . '/SpecialManualSitemap.php';
 $wgAvailableRights[] = 'manualsitemap';
