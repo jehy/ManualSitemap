@@ -1,9 +1,4 @@
 <?php
-if(file_exists('includes/QueryPage.php'))
-	require_once('includes/QueryPage.php');
-else
-	require_once("QueryPage.php");
-
 /**
 * 'SpecialManualSitemap' class
 *
