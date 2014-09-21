@@ -65,7 +65,7 @@ class SpecialManualSitemap extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'ManualSitemap', 'manualsitemap', true );
 	}
-    function execute() {
+    function execute($subPage) {
         global $wgUser, $wgOut;
 
 		if ( ! $wgUser->isAllowed("manualsitemap") ) {
