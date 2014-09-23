@@ -140,7 +140,7 @@ class SpecialManualSitemap extends SpecialPage {
 
                 $info="";
 
-                if( $this->offset != 0 ) {
+                if( isset($this->offset) && $this->offset != 0 ) {
                         $class="errorbox";
                         $info="<strong>This selection misses the $this->offset most viewed pages of $wgSitename, however</strong>...<br />\n"; #English
                 } else {
